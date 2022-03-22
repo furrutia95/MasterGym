@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="text-center">
+        
+        <img src="assets/images.png" alt="">
+        <h3>Bienvenido, por favor ingrese sus datos</h3>
+    </div>
+    <form [formGroup]="formularioLogin">
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" formControlName = "email" aria-describedby="emailHelp" placeholder="Ingrese su correo electrónico">
+                <div *ngIf="formularioLogin.controls['email'].invalid && formularioLogin.controls['email'].dirty" class="alert alert-danger" role="alert">
+                    <span *ngIf="formularioLogin.controls['email'].hasError('required')">Correo es requerido</span>
+                    <span *ngIf="formularioLogin.controls['email'].hasError('email')">Correo no es válido</span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" (keyUp.enter)="ingresar()" class="form-control" id="exampleInputPassword1" formControlName = "password"  placeholder="Ingrese su contraseña">
+                <div *ngIf="formularioLogin.controls['password'].invalid && formularioLogin.controls['password'].dirty" class="alert alert-danger" role="alert">
+                    <span *ngIf="formularioLogin.controls['password'].hasError('required')">Contraseña es requerida</span>
+                </div>
+            </div>
+            <button type="submit" (click)="ingresar()" [disabled]="!formularioLogin.valid" class="btn btn-primary">Ingresar</button>
+    </form>
+
+    <div *ngIf="!datosCorrectos" class="alert alert-warning" role="alert">
+        {{textoError}}
+    </div>
+
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer" 
+    [fullScreen] = "true"><p style="color: white" > Ingresando al sistema... </p></ngx-spinner>
+
+</div>
+

@@ -1,0 +1,24 @@
+
+<div class="container mt-5">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Fecha de Inicio</th>
+            <th scope="col">Fecha Final</th>
+            <th scope="col">Imagen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let inscripcionx of inscripciones">
+            <th scope="row">{{inscripcionx.clienteObtenido.nombre}} {{inscripcionx.clienteObtenido.apellido}}</th>
+            <td>{{inscripcionx.fecha | date}}</td>
+            <td>{{inscripcionx.fechaFinal | date}}</td>
+            <td>
+                <img width="60px" [src]="inscripcionx.clienteObtenido.imgUrl" alt="...">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
