@@ -1,6 +1,14 @@
 # Mastergym
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+La base de datos utilizada fue Firebase.
+
+## Descripción del Proyecto
+
+Este proyecto tiene el objetivo de crear un pequeña aplicación web para un gimnasio, donde se puede ingresar clientes, precios de suscrpción, inscribir
+a los clientes a una suscripción y ver unas pocas estadisticas.
+
+Es un proyecto básico de Angular con Firebase.
 
 ## Development server
 
@@ -25,3 +33,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
